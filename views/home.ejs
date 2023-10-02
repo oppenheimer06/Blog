@@ -1,0 +1,94 @@
+<%-include("partials/header")-%>
+
+<div class="row">
+
+    <div class="col-lg-8 cols col1 ">
+        <h1>Home</h1>
+        <p><%=para1.substring(0,100)%>...<a style ="color: black;" href="/Home">Read More</a></p>
+        <div class="image">
+        <img class="blog" src="/css/blogger.png" height="100px" width="100px">
+        </div>
+    </div>
+    <div class="col-lg-4 cols col2">
+        <img src="https://img.freepik.com/free-vector/blogging-fun-content-creation-online-streaming-video-blog-young-girl-making-selfie-social-network-sharing-feedback-self-promotion-strategy-vector-isolated-concept-metaphor-illustration_335657-855.jpg">
+    </div>
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-lg-8 cols col1 ">
+        <h1>What Makes a Blog Great??</h1>
+        <p><%=para2.substring(0,100)%>...<a style ="color: black;" href="/greatblog">Read More</a></p>
+        <div class="image">
+            <img class="blog" src="/css/blogger.png" height="100px" width="100px">
+            </div>
+    </div>
+    <div class="col-lg-4 cols col2">
+        <img src="https://ulearning.com/wp-content/uploads/2019/02/d4c259205d3859327c6b4be85450070e.jpeg">
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-8 cols col1 ">
+        <h1>Blog VS Website</h1>
+        <p><%=para3.substring(0,100)%>...<a style ="color: black;" href="/blogvswebsite">Read More</a></p>
+        <div class="image">
+            <img class="blog" src="/css/blogger.png" height="100px" width="100px">
+            </div>
+    </div>
+    <div class="col-lg-4 cols col2">
+    <img src="https://wbcomdesigns.com/wp-content/uploads/2018/08/Blog-Vs-Website.jpg">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<%posts.forEach(function(post){%>
+    <div class="row">
+        <div class="col-lg-8 cols col1">
+  <h1 class="dataHeading"><%=post.name%></h1>
+  <%if(post.content.length<150){%>
+    <p class="dataContent"><%= (post.content)%></p>
+  <%}else{%>
+    <p class="dataContent"><%= (post.content).substring(0,150)%>...<a style ="color: black;" href="/posts/<%=post._id%>">Read More</a></p>
+  <%}%>
+
+  <div class="image">
+    <img class="blog" src="/css/blogger.png" height="100px" width="100px">
+    </div>
+        </div>
+        <div class="col-lg-4 cols col2">
+            <img src="<%=post.img %>">
+            </div>
+    </div>
+  <%});%>
+
+
+
+
+
+
+
+</div>
+
+<footer class="f1 footer">
+  
+ <p>Made with ❤️ by oppenheimer</p>
+ <p>Contact Email:<a href="mailto:oppenheimer065@gmail.com">oppenheimer065@gmail.com</a></p>
+
+</footer>
+<%-include("partials/mobileFooter");-%>
+
+</body>
+</html>
+
+
