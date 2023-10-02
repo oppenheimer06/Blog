@@ -36,7 +36,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const greatblog="If you've ever met with investors and made an elevator pitch—a quick two-minute presentation about your business—you know that the goal isn’t to get funding right then and there, but to deliver enough information so that the investors will want to hear more.If you plan to create your own blog, it is helpful to know what makes an excellent one in the first place. Typically, you can expect to find the following elements in successful blogs:High-quality blog content. The content should demonstrate expertise, authoritativeness, and trustworthiness (EAT). It is also important to use easy-to-understand language and formatting to make the blog post digestible.";
 const blogvswebsite="A blog is typically a section of your business's website — but, unlike the rest of your website, you need to update the blog section frequently by adding new posts. Additionally, your blog is a tool that allows you to engage more with an audience, either by analyzing how many readers share your blog posts on social, or by allowing readers to comment on your individual posts. In this way, a blog is more like a two-way conversation than the rest of your website.";
 
-mongoose.connect("mongodb://0.0.0.0/blogDB");
+mongoose.connect("mongodb+srv://admin-yug:shiva963423@cluster0.upnpywb.mongodb.net/blogDB");
 const  blogSchema=new mongoose.Schema({
   name:String,
   content:String,
