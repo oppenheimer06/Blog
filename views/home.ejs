@@ -1,0 +1,37 @@
+<%-include("partials/header")-%>
+
+
+
+
+
+
+
+<%Users.forEach(function(post){for(var i=0;i<post.content.length ;i++){%>
+                <div class="row">
+                <div class="col-lg-8 cols col1">
+                <img src="<%= post.profile_img%>" class="user-image" referrerpolicy="no-referrer"/>
+                <p class="post-username"><%= post.username%></p>
+                <h3 class="post-title"><%= post.content[i].title %></h3>
+                <%if(post.content[i].secret.length<150){%>
+                    <p><%= post.content[i].secret %> </p>
+                <%}else{%>
+                    <p class="dataContent"><%= (post.content[i].secret).substring(0,150)%>...<a href="/posts/<%=post._id%><%=i%>">Read More</a></p>
+                <%}%>
+        
+            </div>
+            </div>
+            <%}})%>
+
+
+<footer class="f1 footer">
+  
+ <p>Made with ❤️ by oppenheimer</p>
+ <p>Contact Email:<a href="mailto:oppenheimer065@gmail.com">oppenheimer065@gmail.com</a></p>
+
+</footer>
+<%-include("partials/mobileFooter");-%>
+
+</body>
+</html>
+
+

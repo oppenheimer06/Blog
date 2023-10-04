@@ -1,0 +1,11 @@
+
+<%-include("partials/header")-%>
+<div class="row">
+    <div class="col-lg-8 cols col1">
+    <img src="<%= user.profile_img%>" class="user-image" referrerpolicy="no-referrer"/>
+    <p class="post-username"><%= user.username%></p>
+<h3 class="post-title"><%=user.content[number].title%></h3>
+<p><%= user.content[number].secret%></p>
+
+<%-include("partials/footer");-%>
+<%-include("partials/mobileFooter");-%>
