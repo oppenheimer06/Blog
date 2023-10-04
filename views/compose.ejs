@@ -1,0 +1,19 @@
+<%-include("partials/header");-%>
+
+<div class="row">
+<h1>Compose Your Own Blog</h1>
+
+<form action="/compose" method="post">
+    <label>Title</label>
+    <input class="form-control" type="text" name="postTitle" required> 
+    <label>Post</label>
+    <textarea class="form-control" type="text" name="postBody" rows="4" required></textarea>
+    <input type="file" name="image" id="inputFileToLoad">
+    <button name="button" class="btn btn-primary " type="submit">Publish</button>
+</form>
+</div>
+
+
+<%-include("partials/footer");-%>
+
+<%-include("partials/mobileFooter");-%>
