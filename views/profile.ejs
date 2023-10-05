@@ -1,0 +1,26 @@
+
+<%-include("partials/header")-%>
+
+<h2 class="profile-username "><%= profile.username%></h2>
+<div class="profile-1">
+<div class="profile">
+    <img src="<%= profile.profile_img%>" class="profile-image" referrerpolicy="no-referrer"/>
+</div>
+<div class=" profile profile-2">
+<p><%= profile.content.length%></p>
+<p>Posts</p>
+</div>
+<div class=" profile profile-2">
+    <p>10K</p>
+    <p>Followers</p>
+</div>
+<div class="profile profile-2"">
+    <p>500</p>
+    <p>Following</p>
+</div> 
+</div>  
+
+
+
+<%-include("partials/footer");-%>
+<%-include("partials/mobileFooter");-%>

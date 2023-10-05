@@ -27,6 +27,9 @@ a:hover{
     text-decoration: none;
     color: rgb(100, 244, 244);
 }
+nav{
+    color: rgb(51, 46, 46);
+}
 .ul li{
     list-style: none;
     display: inline;
@@ -117,7 +120,7 @@ h3{
     font-weight: 700;
 }
 
-.row{
+.row1{
     padding: 1.875rem 6.5625rem;
 }
 img{
@@ -165,6 +168,11 @@ img{
 .blog{
     margin: 40px auto 0px;
 }
+hr{
+    color: rgb(250, 247, 247);
+   margin: 0px;
+   padding:0px;
+}
 
 .nav{
     display: none;
@@ -175,12 +183,15 @@ img{
     justify-content: center;
     padding: 200px 0px;
 }
-
+.profile-2{
+    text-align: center;
+    padding: 0px;
+}
 @media (max-width:500px){
     body{
         padding-bottom: 100px;
         background: none;
-        background-color: rgb(9, 7, 7);
+        background-color: rgb(18, 16, 16);
     }
     h1{
         font-size: 2rem;
@@ -207,7 +218,7 @@ img{
         line-height: 1.5;
     }
     .sign{
-        padding: 0.5rem;
+        padding-right: 0px;
         width: auto;
         height: 30px;
     }
@@ -218,6 +229,25 @@ img{
         z-index: 1;
         margin: 5px;
     }
+    .profile{
+        display: inline;
+    }
+    .profile-1{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 30px;
+    }
+
+    .profile-image{
+        border-radius: 100%;
+        height: 70px;
+        width: 70px;
+    }
+    .profile-username{
+        color: rgb(224, 217, 218);
+        font-weight: 500;
+        padding-bottom: 0.7rem;
+    }
     .blog{
         margin: 40px auto 50px;
     }
@@ -227,7 +257,7 @@ img{
     .col1 .image{
         display: none;
     }
-    .row{
+    .row1{
         padding: 30px 30px 0px;
     }
     .col2{
@@ -239,6 +269,7 @@ img{
     }
     .navbar1{
         padding:20px 20px 0px;
+        background-color: rgb(22, 6, 6);
         
     }
     .navbar1 h3{
@@ -341,5 +372,8 @@ img{
         .col2 img{
             height: 230px;
             width: 250px;
+        }
+        .profile-1{
+            padding-right: 25px;
         }
     }

@@ -69,8 +69,8 @@ passport.serializeUser(function(user, cb) {
     
 
 passport.use(new GoogleStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
+  clientID: 216727738504-rrbv7ua64suv9bqe027k4gb37kgd9of0.apps.googleusercontent.com,
+  clientSecret: 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,
   callbackURL: "http://localhost:3000/auth/google/blog",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
@@ -100,7 +100,7 @@ app.get('/auth/google',
 ));
 
 app.get('/auth/google/blog', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');
@@ -168,6 +168,21 @@ app.get("/search",function(req,res){
 
 app.get("/user",function(req,res){
   res.render("soon")
+ })
+
+
+ app.get("/profile",function(req,res){
+  if(req.isAuthenticated()){
+    User.findById(req.user.id)
+    .then(function(profilePage){
+      res.render("profile",{profile:profilePage});
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+    } else{
+      res.render("auth");
+    }
  })
 
 app.post("/compose", function(req,res){
