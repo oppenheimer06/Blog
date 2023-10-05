@@ -71,7 +71,7 @@ passport.serializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
   clientID: 216727738504-rrbv7ua64suv9bqe027k4gb37kgd9of0.apps.googleusercontent.com,
   clientSecret: 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,
-  callbackURL: "http://localhost:3000/auth/google/blog",
+  callbackURL: "https://blog-ten-henna.vercel.app/auth/google/blog",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
 function(accessToken, refreshToken, profile, cb) {
