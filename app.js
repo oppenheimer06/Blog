@@ -7,11 +7,6 @@ const fs=require("fs");
 const ejs = require("ejs");
 const _=require("lodash");
 const mongoose=require("mongoose");
-const session=require("express-session");
-const passport=require("passport");
-const passportLocalMongoose=require("passport-local-mongoose");
-const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
-const findOrCreate=require("mongoose-findorcreate");
 const app = express();
 
 
@@ -20,15 +15,6 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
-app.use(session({
-  secret:"Our Little secret.",
-  resave:false,
-  saveUninitialized:false
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 
@@ -48,38 +34,9 @@ const  blogSchema=new mongoose.Schema({
   content:[]
 });
 
-blogSchema.plugin(passportLocalMongoose);
-blogSchema.plugin(findOrCreate);
 
 const User=mongoose.model("User",blogSchema);
 
-passport.use(User.createStrategy());
-
-passport.serializeUser(function(user, cb) {
-    process.nextTick(function() {
-      cb(null, { id: user.id, username: user.username });
-    });
-  });
-  
-  passport.deserializeUser(function(user, cb) {
-    process.nextTick(function() {
-      return cb(null, user);
-    });
-  });
-    
-
-passport.use(new GoogleStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/blog",
-  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-},
-function(accessToken, refreshToken, profile, cb) {
-  User.findOrCreate({ googleId: profile.id ,username:profile.displayName,profile_img:profile.photos[0].value.slice(0,-6)}, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
 
   
 
@@ -129,11 +86,9 @@ app.get("/contact",function(req,res){
 });
 
 app.get("/compose",function(req,res){
-  if(req.isAuthenticated()){
+ 
   res.render("compose");
-  } else{
-    res.render("auth");
-  }
+
 });
 
 app.get("/logout",function(req,res){
