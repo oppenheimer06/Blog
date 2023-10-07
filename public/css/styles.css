@@ -119,8 +119,13 @@ h3{
     color: rgb(221, 216, 216);
     font-weight: 700;
 }
+.user-1{
+   display: flex;
+   justify-content: center;
+ 
+}
 
-.row1{
+.row{
     padding: 1.875rem 6.5625rem;
 }
 img{
@@ -187,7 +192,7 @@ hr{
     text-align: center;
     padding: 0px;
 }
-@media (max-width:500px){
+@media screen and (max-width:500px){
     body{
         padding-bottom: 100px;
         background: none;
@@ -257,7 +262,7 @@ hr{
     .col1 .image{
         display: none;
     }
-    .row1{
+    .row{
         padding: 30px 30px 0px;
     }
     .col2{
@@ -365,7 +370,7 @@ hr{
         0 0 60px var(--home-icon-color); 
       }
     }
-    @media (max-width:380px){
+    @media screen and (max-width:380px){
         i{
             font-size: 2rem;
         }

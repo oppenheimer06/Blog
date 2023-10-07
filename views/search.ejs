@@ -3,11 +3,11 @@
 
 
     <% users.forEach(function(user){%>
-        <div class="user1">
+
             <div class="user-1">
+
                 <img src="<%= user.profile_img%>" class="user-image" referrerpolicy="no-referrer"/>
                 <p class="post-username"><%= user.username%></p>
-            </div>
         </div>
     <%})%>
 <%-include("partials/mobileFooter");-%>

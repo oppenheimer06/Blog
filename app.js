@@ -10,7 +10,7 @@ const mongoose=require("mongoose");
 const session=require("express-session");
 const passport=require("passport");
 const passportLocalMongoose=require("passport-local-mongoose");
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const findOrCreate=require("mongoose-findorcreate");
 const app = express();
 
@@ -71,7 +71,7 @@ passport.serializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "https://bloging-v07e.onrender.com/auth/google/blog",
+  callbackURL: "http://localhost:3000/auth/google/blog",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
 function(accessToken, refreshToken, profile, cb) {
