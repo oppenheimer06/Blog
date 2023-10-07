@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fs=require("fs");
 const ejs = require("ejs");
+const passport=require("passport");
 const _=require("lodash");
 const mongoose=require("mongoose");
 const app = express();
@@ -52,16 +53,8 @@ app.get("/",function(req,res){
 })
 
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ["profile"] }
-));
 
-app.get('/auth/google/blog', 
-  passport.authenticate('google', { failureRedirect: '/' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
+
  
 app.get("/Home",function(req,res){
 res.render("post",{postTitle:"Home",postContent:homeStartingContent,postImg:"https://img.freepik.com/free-vector/blogging-fun-content-creation-online-streaming-video-blog-young-girl-making-selfie-social-network-sharing-feedback-self-promotion-strategy-vector-isolated-concept-metaphor-illustration_335657-855.jpg"})
